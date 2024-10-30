@@ -1,0 +1,36 @@
+{
+  "name": "gamenance-web",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Andres Vazquez",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.5",
+    "esrun": "^3.2.26",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.3",
+    "rimraf": "^6.0.1",
+    "sequelize": "^6.37.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.8.4",
+    "nodemon": "^3.1.7",
+    "sequelize-cli": "^6.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "description": "App for tracking your finances",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "back:build": "rimraf prod && tsc -p server",
+    "back:copy-assets": "copyfiles server/assests/**/* prod/ --up 1 --exclude \"**/*.ts\"",
+    "back:dev": "yarn back:build && nodemon",
+    "db:migrate": "node_modules/.bin/sequelize db:migrate",
+    "db:migrate:undo": "node_modules/.bin/sequelize db:migrate:undo",
+    "db:migrate:reset": "node_modules/.bin/sequelize db:migrate:undo:all",
+    "db:migration": "node_modules/.bin/sequelize migration:generate --name"
+  }
+}
