@@ -2,5 +2,5 @@
     "watch": ["server"],
     "ext": ".ts,.js",
     "ignore": [],
-    "exec": "tsc -p server && node ./prod/server.js"
+    "exec": "tsc && node ./prod/server.js"
 }

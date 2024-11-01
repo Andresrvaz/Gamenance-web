@@ -6,26 +6,38 @@
   "license": "MIT",
   "type": "commonjs",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.5",
     "esrun": "^3.2.26",
     "express": "^4.21.1",
+    "express-validator": "^7.2.0",
+    "form-data": "^4.0.1",
+    "mailgun.js": "^10.2.3",
     "mysql2": "^3.11.3",
     "rimraf": "^6.0.1",
-    "sequelize": "^6.37.5"
+    "sequelize": "^6.37.5",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/express": "^5.0.0",
     "@types/node": "^22.8.4",
+    "@typescript-eslint/eslint-plugin": "^8.12.2",
+    "@typescript-eslint/parser": "^8.12.2",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "nodemon": "^3.1.7",
+    "prettier": "^3.3.3",
     "sequelize-cli": "^6.6.2",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "typescript-eslint": "8.0.0-alpha.10"
   },
   "description": "App for tracking your finances",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "back:build": "rimraf prod && tsc -p server",
+    "back:build": "rimraf prod && tsc",
     "back:copy-assets": "copyfiles server/assests/**/* prod/ --up 1 --exclude \"**/*.ts\"",
     "back:dev": "yarn back:build && nodemon",
     "db:migrate": "node_modules/.bin/sequelize db:migrate",

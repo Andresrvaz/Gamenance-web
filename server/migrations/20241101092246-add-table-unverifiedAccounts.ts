@@ -10,7 +10,7 @@ export default {
 
     try {
       await queryInterface.createTable(
-        "Users",
+        "UnverifiedAccounts",
         {
           id: {
             type: Sequelize.DataTypes.INTEGER,
@@ -21,18 +21,27 @@ export default {
             type: Sequelize.DataTypes.STRING,
             allowNull: false,
           },
+          secondaryName: {
+            type: Sequelize.DataTypes.STRING,
+            allowNull: true,
+          },
           lastName: {
             type: Sequelize.DataTypes.STRING,
             allowNull: false,
+          },
+          secondaryLastName: {
+            type: Sequelize.DataTypes.STRING,
+            allowNull: true,
           },
           email: {
             type: Sequelize.DataTypes.STRING,
             allowNull: false,
             unique: true,
           },
-          password: {
+          registerId: {
             type: Sequelize.DataTypes.STRING,
-            allowNull: false,
+            defaultValue: Sequelize.UUIDV4(),
+            unique: true,
           },
           createdAt: {
             type: Sequelize.DataTypes.DATE,
@@ -63,7 +72,7 @@ export default {
     });
 
     try {
-      await queryInterface.dropTable("Users");
+      await queryInterface.dropTable("UnverifiedAccounts");
 
       transaction.commit();
     } catch (e: any) {

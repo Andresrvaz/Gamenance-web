@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "NodeNext",
+    "rootDir": "./server",
+    "moduleResolution": "NodeNext",
+    "outDir": "./prod",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "./server/**/*.ts"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "eslint.workingDirectories": [
+    {
+      "directory": "./server",
+      "changeProcessCWD": true
+    }
+  ],
+  "eslint.validate": [
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
+}
